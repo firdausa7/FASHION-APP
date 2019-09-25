@@ -11,8 +11,12 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationE
 class PostForm(FlaskForm):
     title= StringField('Title', validators = [DataRequired()])
     content = TextAreaField('Content', validators = [DataRequired()])
+    design_image = FileField('Update Profile Picture', validators=[FileAllowed(['jpg','png'])])
+
     submit = SubmitField('Post')
 
 
-class CommentForm(FlaskForm)
+class CommentForm(FlaskForm):
+    text= TextAreaField('Leave a comments', validators=[DataRequired()])
 
+    submit = SubmitField('Submit')
