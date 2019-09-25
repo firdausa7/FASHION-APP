@@ -9,8 +9,8 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationE
 
 
 class PostForm(FlaskForm):
-    title= StringField('Title', validators = [DataRequired()])
-    content = TextAreaField('Content', validators = [DataRequired()])
+    design_name= StringField('Title', validators = [DataRequired()])
+    description = TextAreaField('Content', validators = [DataRequired()])
     design_image = FileField('Update Profile Picture', validators=[FileAllowed(['jpg','png'])])
 
     submit = SubmitField('Post')

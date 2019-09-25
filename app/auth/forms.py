@@ -15,17 +15,18 @@ class RegistrationForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password',
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
+    
+    def validate_username(self, username):
+        if username.data != current_user.username:
+            user = User.query.filter_by(username=username.data).first()
+            if user:
+                return ValidationError('There is an account with that username')
 
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if user:
-            return ValidationError('There is an account with that email')
-
-    def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
-        if user:
-            return ValidationError('That username is taken')
-
+        if email.data != current_user.email:
+            user = User.query.filter_by(email=email.data).first()
+            if user:
+                return ValidationError('That email is taken')
 
 class LoginForm(FlaskForm):
 
@@ -53,14 +54,14 @@ class UpdateAccountForm(FlaskForm):
 
     submit = SubmitField('Update')
 
-    def validate_email(self, email):
-        if email.data != current_user.email:
-            user = User.query.filter_by(email=email.data).first()
-            if user:
-                return ValidationError('There is an account with that email')
-
     def validate_username(self, username):
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
             if user:
-                return ValidationError('That username is taken')
+                return ValidationError('There is an account with that username')
+
+    def validate_email(self, email):
+        if email.data != current_user.email:
+            user = User.query.filter_by(email=email.data).first()
+            if user:
+                return ValidationError('That email is taken')
