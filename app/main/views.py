@@ -13,3 +13,10 @@ def about_us():
     # category = Category.get_categories()
 
     return render_template('about.html')
+@main.route('/designers')
+def designs():
+    """ View root page function that returns index page """
+
+    # category = Category.get_categories()
+
+    return render_template('designers.html')
