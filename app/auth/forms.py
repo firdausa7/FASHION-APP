@@ -16,15 +16,18 @@ class RegistrationForm(FlaskForm):
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
-    def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if user:
-            return ValidationError('There is an account with that email')
-
+  
     def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
+        user = User.query.filter_by(username = username.data).first()
         if user:
-            return ValidationError('That username is taken')
+            raise ValidationError('The username is already taken. Please enter a different username.')
+
+
+    def validate_email(self, email):
+
+        user = User.query.filter_by(email = email.data).first()
+        if user:
+            raise ValidationError('The email exists. Please enter a different email.')    
 
 
 class LoginForm(FlaskForm):
@@ -53,14 +56,13 @@ class UpdateAccountForm(FlaskForm):
 
     submit = SubmitField('Update')
 
-    def validate_email(self, email):
-        if email.data != current_user.email:
-            user = User.query.filter_by(email=email.data).first()
-            if user:
-                return ValidationError('There is an account with that email')
-
     def validate_username(self, username):
-        if username.data != current_user.username:
-            user = User.query.filter_by(username=username.data).first()
-            if user:
-                return ValidationError('That username is taken')
+        user = User.query.filter_by(username = username.data).first()
+        if user:
+            raise ValidationError('The username is already taken. Please enter a different username.')
+
+    def validate_email(self, email):
+
+        user = User.query.filter_by(email = email.data).first()
+        if user:
+            raise ValidationError('The email exists. Please enter a different email.')    
