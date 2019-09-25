@@ -1,8 +1,13 @@
 from . import db
 from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash 
+from flask_login import UserMixin
+from . import login_manager
+import requests
 
 
-class User(db.Model):
+
+class User(UserMixin,db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer,primary_key=True) 
     username = db.Column(db.String(255),unique=True, nullable=False)
@@ -13,9 +18,24 @@ class User(db.Model):
     contact = db.Column(db.Integer)
     posts = db.relationship('Post',backref='user',lazy=True)
     design_name = db.Column(db.String(100))
+
+    @property
+    def password(self):
+        raise AttributeError('You cannot read the password attribute')
+
+    @password.setter
+    def password(self, password):
+        self.pass_secure = generate_password_hash(password)
+
+
+    def verify_password(self,password):
+        return check_password_hash(self.pass_secure,password)
+
+
+
     
 
-class Post(db.Model):
+class Post(UserMixin,db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     design_image = db.Column(db.String(255), default='default.jpg')
@@ -25,7 +45,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'), nullable = False)
     comment = db.relationship('Comment',backref='post',lazy = 'dynamic' )
 
-class Comment(db.Model):
+class Comment(UserMixin,db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
     date_posted = db.Column(db.DateTime, nullable = False, default =datetime.utcnow)
