@@ -1,19 +1,21 @@
-import os
-from flask import render_template,url_for,flash,request,redirect
+import secrets,os,requests
+from app import create_app
+from flask import render_template,redirect,url_for
 from . import auth
-import secrets
+from flask import flash,request
+from .forms import RegistrationForm,LoginForm,UpdateAccountForm 
+from .. models import User, Post
 from .. import db,bcrypt
 from flask_login import login_user,logout_user,login_required,current_user
-from .forms import LoginForm,RegistrationForm
 from . import auth
 from .. import mail
-from ..models import User
+
 
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
-    if current_user.is_authenticated:
-        return  redirect(url_for('main.home'))
+    # if current_user.is_authenticated:
+    #     return  redirect(url_for('main.home'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -27,6 +29,10 @@ def register():
 
 @auth.route('/login',methods=['GET','POST'])
 def login():
+    quote_data = requests.get('http://quotes.stormconsultancy.co.uk/random.json' ).json()
+    quote_content= quote_data.get('quote')
+    quote_author= quote_data.get('author')
+    
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
     form = LoginForm()
@@ -37,8 +43,8 @@ def login():
             next_page = request.args.get('next')
             return redirect(request.args.get('next') or url_for('main.index'))
         else:
-            flash('Loggin Unsuccessful. Please check email and password', 'danger')    
-    return render_template('auth/login.html', title='Login', form=form)
+            flash('Login Unsuccessful. Please check email and password', 'danger')
+    return render_template('auth/login.html', title='Login', form=form,quote=quote_content, author=quote_author)
 
 @auth.route('/logout')
 @login_required
