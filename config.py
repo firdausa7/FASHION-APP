@@ -4,6 +4,7 @@ class Config:
     '''
     General configuration parent class
     '''
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://paul:leejones1@localhost/fashion'
 
 
 
@@ -14,7 +15,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-
+    pass
 
 class DevConfig(Config):
     '''
