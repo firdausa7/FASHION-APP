@@ -1,1 +1,12 @@
-<h1>hello</h1>
+{% extends 'base.html' %}
+{% block styles%} 
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+
+{% endblock styles %}
+<!-- Content block -->
+{% block content%}
+<div class="container-fluid" id="home">
+<h1>HELLO FASHION</h1>
+</div>
+{% endblock %}

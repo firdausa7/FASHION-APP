@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbox {
+    margin: 0;
+    padding: 0;
+    position: absolute ;
+    overflow: hidden;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    box-shadow: 0 0 20px 2px #000;
+    transition: 400ms;
+}
+
+#navbox span {
+    position: fixed;
+    color: white;
+    overflow: hidden;
+}
+
+#btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-right: 20px;
+    z-index: 1;
+}
+
+#btn div {
+    position: relative;
+    margin-top: 10px;
+    width: 35px;
+    height: 2px;
+    background: black;
+    transition: 300ms;
+}
+
+.d1{
+    background: #fff !important;
+    top: 2px;
+    transform: rotate(45deg);
+}
+
+.d2{
+    margin: 0 !important;
+    display: none;
+}
+
+.d3{
+    background: #fff !important;
+    top: 0;
+    margin: 0 !important;
+    transform: rotate(-45deg);
+}
+
+#navs {
+   position: relative;
+   margin-top: 55px;
+   display: block;
+   transition: 900ms;
+}
+
+#navs a {
+    position: relative;
+    right: 7%;
+    margin-top: 5px;
+    padding: 25px;
+    width: 100%;
+    display: block;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    font-weight: bolder;
+    transition: 400ms;
+
+}
+
+#navs a:hover {
+    background: #fff;
+    color: #000;
+}
+
+.content {
+    overflow: hidden;
+    margin-left: 50%;
+}
+
+
+#rights {
+    position: fixed;
+    bottom: 0;
+    margin-left: 32%;
+    font-weight: bold;
+    font-size: 10px;
+
+}
+#home{
+    background-image: url("../images/fash.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
