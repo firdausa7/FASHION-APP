@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <img class="mySlides" src="../static/images/img1.jpg">
         <img class="mySlides" src="../static/images/img2.jpg">
         <img class="mySlides" src="../static/images/img3.jpg">
         <img class="mySlides" src="../static/images/img4.jpg">
-    </div>
+    </div> -->
     <div class = "container-fluid about">
     <h1>What Makes Us Different?</h1>
     <hr>
-    <p>For many years, fashion design has been closely associated with tailoring, often considered the last resort after poor performance in school. 
-    This is both wrong and unfortunate due to the fact that the international market of fashion is a thriving industry employing millions, adding value and greatly 
-    propelling the economies of many nations.In Kenya, there are many aspiring and gifted designers with a passion for fashion and dreams to move from just tailoring 
-    to become renowned fashion brands. <strong>Fashion App</strong> is an web application that helps many of these gifted designers to achieve their dreams in fashion
-    by helping them get their briliant fashion ideas out to the world. Fashion App provides a platform where designers can create profiles and share some of their brilliant
-    ideas. Fashion app also provides a platform for other users who may want to get new fashion design.There is great potential and genuine interest in fashion in East 
-    Africa today, evidenced by the frequent occurrence of creative fashion events. Creativity alone without excellence will however perpetually keep us in a stagnant market. 
-    It is upon this foundation that Fashion App is created.</p>
+    <p>For many years, fashion design has been closely associated with tailoring, often considered the last resort after poor performance in school. <br>
+            This is both wrong and unfortunate due to the fact that the international market of fashion is a thriving industry employing<br> 
+                    millions, adding value and greatly propelling the economies of many nations.In Kenya, there are</br> 
+                            many aspiring and gifted designers with a passion for fashion and dreams<br> 
+                                  to move from just tailoring to become renowned fashion brands.<br><br>
+<strong>Fashion App</strong> is an web application that helps many of these gifted designers to achieve their dreams in fashionby helping them get<br>
+           their briliant fashion ideas out to the world. Fashion App provides a platform where designers can create profiles and share some<br>
+                of their brilliant ideas. Fashion app also provides a platform for other users who may want to get new fashion<br>
+                       design.<br>
+        There is great potential and genuine interest in fashion in East Africa today, evidenced by the frequent occurrence of creative fashion events. <br>
+        Creativity alone without excellence will however perpetually keep us in a stagnant market. It is upon this foundation that Fashion App is created.</p>
     </div>
+    <script src="{{ url_for('static', filename='/js/style.js')}}"></script>
   </body>
 </html>
