@@ -115,3 +115,19 @@ body {
  
 }
 
+.auth-forms{
+    padding-top: 200px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    
+}
+
+.auth-family{
+    background-image: url("../images/gwen.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+

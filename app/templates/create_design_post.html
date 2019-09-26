@@ -4,19 +4,21 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<div class="container-fluid auth-family">
+    <div class="auth-forms">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"> </div>
+                <div class="col-md-8">
 
-<div class="auth-forms">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"> </div>
-            <div class="col-md-8">
-  
-                {{wtf.quick_form(post_form)}}
+                    {{wtf.quick_form(post_form)}}
 
+                </div>
+                <div class="col-md-2"></div>
             </div>
-            <div class="col-md-2"></div>
         </div>
     </div>
 </div>
+
 
 {% endblock %}
