@@ -14,8 +14,8 @@ from .. import mail
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
-    # if current_user.is_authenticated:
-    #     return  redirect(url_for('main.home'))
+    if current_user.is_authenticated:
+        return  redirect(url_for('main.index'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -29,7 +29,6 @@ def register():
 
 @auth.route('/login',methods=['GET','POST'])
 def login():
-
     
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
