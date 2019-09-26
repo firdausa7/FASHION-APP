@@ -117,10 +117,12 @@ body {
 }
 
 .auth-forms{
-    padding-top: 200px;
+    margin-top: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
     color:white;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100vh;
+    background-color:black;
+    height: auto;
 
 }
 
@@ -145,7 +147,7 @@ body {
        .loader div
        {
        width:25%;
-       height: 100vh;
+       height: 100%;
        background-image: url("../images/pic1.jpeg");
         background-repeat: no-repeat;
         transform: scaleY(0);
@@ -155,6 +157,7 @@ body {
           { 
           background-image: url("../images/pic2.jpeg");
           background-repeat: no-repeat;
+          height: 100%;
            }
           .loader div:nth-child(1) 
           {
@@ -214,4 +217,41 @@ body {
     margin-bottom: 20px;
     color:white;
 }
+
+p a{
+    text-decoration: none;
+}
+.design-image{
+    padding-top: 25px;
+    width:720px;
+    height:auto;
+}
+a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+}
+
+.article-content {
+    white-space: pre-line;
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata,.article-content a:hover {
+    color: #333;
+    text-decoration: none;
+}
+.media{
+    background-color:rgba(0, 0, 0, 0.5);
+}
+.designs{
+    background-image:radial-gradient(circle,#000000,#0000ff);
+}
+
+
+
 
