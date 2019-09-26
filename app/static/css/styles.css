@@ -150,25 +150,29 @@ body {
         background-repeat: no-repeat;
         transform: scaleY(0);
          animation: animate 5s ease-in-out infinite;
-          } 
-          .loader div:nth-child(even) 
-          { 
+          }
+          .loader div:nth-child(even)
+          {
           background-image: url("../images/pic2.jpeg");
           background-repeat: no-repeat;
            }
-          .loader div:nth-child(1) 
+          .loader div:nth-child(1)
           {
-           animation-delay: 1s;
+           animation-delay: 0.5s;
+           background-image: url("../images/pic3.jpeg");
+
             }
-             .loader div:nth-child(2) 
-             { 
-             animation-delay: 1s; 
-             } 
+             .loader div:nth-child(2)
+             {
+             animation-delay: 1s;
+             }
              .loader div:nth-child(3)
               {
-              animation-delay: 1.5s; 
-              } 
+              animation-delay: 1.5s;
+              }
               .loader div:nth-child(4) {
+                background-image: url("../images/amin.jpeg");
+
                animation-delay: 2s;
                 }
                  @keyframes animate

@@ -14,9 +14,7 @@ app = create_app('development')
 
 
 @main.route('/')
-def index():
 
-    
     return render_template("index.html")
 @main.route('/about')
 def about_us():
@@ -63,6 +61,4 @@ def new_design_post():
    
        
     return render_template('create_design_post.html',title = Post.design_name, post_form = form)
-
-
 
