@@ -145,8 +145,8 @@ body {
        .loader div
        {
        width:25%;
-        height: 100%; 
-        background-image: url("../images/pic1.jpeg");
+       height: 100vh;
+       background-image: url("../images/pic1.jpeg");
         background-repeat: no-repeat;
         transform: scaleY(0);
          animation: animate 5s ease-in-out infinite;
