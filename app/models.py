@@ -16,7 +16,7 @@ class User(UserMixin, db.Model):
     pass_secure = db.Column(db.String(255), nullable=False)
     bio = db.Column(db.String(255))
     contact = db.Column(db.Integer)
-    posts = db.relationship('Post', backref='user', lazy=True)
+    posts = db.relationship('Post', backref='designer', lazy=True)
     design_name = db.Column(db.String(100))
 
 
