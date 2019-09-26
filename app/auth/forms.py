@@ -46,7 +46,7 @@ class UpdateAccountForm(FlaskForm):
                         validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
 
-    picture = FileField('Update Profile Picture', validators=[
+    image_file  = FileField('Update Profile Picture', validators=[
                         FileAllowed(['jpg', 'png'])])
 
     contact = StringField('Contact',

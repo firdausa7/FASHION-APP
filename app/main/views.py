@@ -14,7 +14,7 @@ app = create_app('development')
 
 @main.route('/')
 def index():
-
+    posts=Post.query.all()
     return render_template("index.html")
 @main.route('/about')
 def about_us():
@@ -53,7 +53,7 @@ def new_design_post():
         db.session.commit()
 
         flash('Posted successfully!', 'success')
-        return redirect(url_for('main.index'))
+        return redirect(url_for('.designers.html'))
     image_file = url_for('static', filename = 'profile_pics/' + current_user.image_file)
        
     return render_template('create_design_post.html',title = Post.design_name, post_form = form,image_file = image_file)
