@@ -36,7 +36,7 @@ body {
     margin-top: 10px;
     width: 35px;
     height: 2px;
-    background: black;
+    background: white;
     transition: 300ms;
 }
 
@@ -100,10 +100,18 @@ body {
 
 }
 #home{
-    background-image: url("../images/fash.jpeg");
+    background-image: url("../images/red.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
+}
+.overlay{
+    background-color: rgba(0,0,0,0.5)
+}
+.welc{
+    padding-top: calc(50vh - 150px);
+    height: 100vh;
+ 
 }
 

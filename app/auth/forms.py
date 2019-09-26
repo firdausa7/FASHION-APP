@@ -15,28 +15,12 @@ class RegistrationForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password',
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
-<<<<<<< HEAD
-
-  
-    def validate_username(self, username):
-        user = User.query.filter_by(username = username.data).first()
-        if user:
-            raise ValidationError('The username is already taken. Please enter a different username.')
-
-
-    def validate_email(self, email):
-
-        user = User.query.filter_by(email = email.data).first()
-        if user:
-            raise ValidationError('The email exists. Please enter a different email.')    
-=======
     
     def validate_username(self, username):
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
             if user:
                 return ValidationError('There is an account with that username')
->>>>>>> 817ec4c4beda9237dba6da8858a50a45ab36c54b
 
     def validate_email(self, email):
         if email.data != current_user.email:
@@ -71,17 +55,6 @@ class UpdateAccountForm(FlaskForm):
     submit = SubmitField('Update')
 
     def validate_username(self, username):
-<<<<<<< HEAD
-        user = User.query.filter_by(username = username.data).first()
-        if user:
-            raise ValidationError('The username is already taken. Please enter a different username.')
-
-    def validate_email(self, email):
-
-        user = User.query.filter_by(email = email.data).first()
-        if user:
-            raise ValidationError('The email exists. Please enter a different email.')    
-=======
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
             if user:
@@ -92,4 +65,3 @@ class UpdateAccountForm(FlaskForm):
             user = User.query.filter_by(email=email.data).first()
             if user:
                 return ValidationError('That email is taken')
->>>>>>> 817ec4c4beda9237dba6da8858a50a45ab36c54b
