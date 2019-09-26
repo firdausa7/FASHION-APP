@@ -29,9 +29,7 @@ def register():
 
 @auth.route('/login',methods=['GET','POST'])
 def login():
-    quote_data = requests.get('http://quotes.stormconsultancy.co.uk/random.json' ).json()
-    quote_content= quote_data.get('quote')
-    quote_author= quote_data.get('author')
+
     
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
@@ -44,7 +42,7 @@ def login():
             return redirect(request.args.get('next') or url_for('main.index'))
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
-    return render_template('auth/login.html', title='Login', form=form,quote=quote_content, author=quote_author)
+    return render_template('auth/login.html', title='Login', form=form)
 
 @auth.route('/logout')
 @login_required
