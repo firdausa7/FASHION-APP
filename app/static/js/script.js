@@ -26,3 +26,4 @@ function buzz(x) {
     cube=document.getElementById("pages");
     cube.style.transform="rotateY("+x+"deg)";
 }
+

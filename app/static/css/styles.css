@@ -15,6 +15,7 @@ body {
     text-align: center;
     box-shadow: 0 0 20px 2px #000;
     transition: 400ms;
+    z-index: 1;
 }
 
 #navbox span {
@@ -100,7 +101,7 @@ body {
 
 }
 #home{
-    background-image: url("../images/red.jpg");
+    background-color:whitesmoke;
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -112,7 +113,7 @@ body {
 .welc{
     padding-top: calc(50vh - 150px);
     height: 100vh;
- 
+
 }
 
 .auth-forms{
@@ -120,7 +121,7 @@ body {
     color:white;
     background-color: rgba(0, 0, 0, 0.5);
     height: 100vh;
-    
+
 }
 
 .auth-family{
@@ -131,3 +132,77 @@ body {
     background-repeat: no-repeat;
 }
 
+
+ .loader
+  {
+  position: fixed;
+   top: 0;
+    left: 0;
+     width: 100%;
+     height: 100vh;
+      display: flex;
+       }
+       .loader div
+       {
+       width:25%;
+        height: 100%; 
+        background-image: url("../images/pic1.jpeg");
+        background-repeat: no-repeat;
+        transform: scaleY(0);
+         animation: animate 5s ease-in-out infinite;
+          } 
+          .loader div:nth-child(even) 
+          { 
+          background-image: url("../images/pic2.jpeg");
+          background-repeat: no-repeat;
+           }
+          .loader div:nth-child(1) 
+          {
+           animation-delay: 1s;
+            }
+             .loader div:nth-child(2) 
+             { 
+             animation-delay: 1s; 
+             } 
+             .loader div:nth-child(3)
+              {
+              animation-delay: 1.5s; 
+              } 
+              .loader div:nth-child(4) {
+               animation-delay: 2s;
+                }
+                 @keyframes animate
+                  {
+                   0% 
+                   { 
+                   transform-origin: top; 
+                   transform: scaleY(0);
+                    }
+                     25% 
+                     { 
+                     transform-origin: top; 
+                     transform: scaleY(1); 
+                     } 
+                     75% 
+                     { 
+                     transform-origin: bottom; 
+                     transform: scaleY(1);
+                      } 
+                      100%
+                       {
+                       transform-origin: bottom; 
+                       transform: scaleY(0); 
+                       }
+                        }
+#abt{
+    background-image: url("../images/fash4.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    background-repeat: no-repeat;
+}
+#ovr{
+    height: 100vh;
+    background-size: cover;
+
+}
