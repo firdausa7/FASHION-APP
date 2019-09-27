@@ -9,7 +9,7 @@ Fashion App  is a web application that allows fashion designers to display their
 * Firdausa Salat
 * Paul Kamau Wamaria
 * Gideon Muriithi
-* Emanuel
+* Emanuel Njuguna
 
 
 
