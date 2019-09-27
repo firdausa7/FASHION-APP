@@ -39,7 +39,7 @@ As a designer, I would like to delete comments that I find  insulting or degradi
 
 ## Installation 
 
-* Clone the repo from this link 
+* Clone the repo from this link https://github.com/firdausa7/FASHION-APP.git
 * Install python3.6
 * Install the requirements as per the requirements.txt
 * Use the command ./start.sh to run the application locally
