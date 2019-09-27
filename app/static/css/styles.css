@@ -6,12 +6,12 @@ body {
 #navbox {
     margin: 0;
     padding: 0;
-    position: absolute ;
+    position: absolute;
     overflow: hidden;
     right: 0;
     width: 0;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     text-align: center;
     box-shadow: 0 0 20px 2px #000;
     transition: 400ms;
@@ -41,18 +41,18 @@ body {
     transition: 300ms;
 }
 
-.d1{
+.d1 {
     background: #fff !important;
     top: 2px;
     transform: rotate(45deg);
 }
 
-.d2{
+.d2 {
     margin: 0 !important;
     display: none;
 }
 
-.d3{
+.d3 {
     background: #fff !important;
     top: 0;
     margin: 0 !important;
@@ -60,10 +60,10 @@ body {
 }
 
 #navs {
-   position: relative;
-   margin-top: 55px;
-   display: block;
-   transition: 900ms;
+    position: relative;
+    margin-top: 55px;
+    display: block;
+    transition: 900ms;
 }
 
 #navs a {
@@ -100,47 +100,61 @@ body {
     font-size: 10px;
 
 }
-#home{
-    background-color:whitesmoke;
+
+#home {
+    background-color: whitesmoke;
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
 }
-.overlay{
-    background-color: rgba(0,0,0,0.5)
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5)
 }
-.welc{
+
+.welc {
     padding-top: calc(50vh - 150px);
     height: 100vh;
 
 }
 
-.auth-forms{
+.auth-forms {
     margin-top: 200px;
     padding-left: 20px;
     padding-right: 20px;
-    color:white;
-    background-color:black;
+    color: white;
+    background-color: black;
     height: auto;
 
 }
-.auth-forms1{
+
+.auth-forms1 {
     margin-top: 150px;
     padding-left: 20px;
     padding-right: 20px;
-    color:white;
-    background-color:transparent;
+    color: white;
+    background-color: transparent;
     height: auto;
 }
-.auth-family{
+
+.auth-family {
     background-image: url("../images/gwen.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
 }
-#lala{
+
+.auth-fam {
+    background-image:url("../images/unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+#lala {
     background-image: url("../images/fash.jpeg");
     background-size: cover;
     background-position: center;
@@ -148,146 +162,161 @@ body {
     background-repeat: no-repeat;
 }
 
- .loader
-  {
-  position: fixed;
-   top: 0;
-    left: 0;
-     width: 100%;
-     height: 100vh;
-      display: flex;
-       }
-       .loader div
-       {
-       width:25%;
-       height: 100vh;
-       background-image: url("../images/pic1.jpeg");
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+
+    .loader div {
+        width: 25%;
+        height: 100vh;
+        background-image: url("../images/pic1.jpeg");
         background-repeat: no-repeat;
         transform: scaleY(0);
-         animation: animate 5s ease-in-out infinite;
-          }
-          .loader div:nth-child(even)
-          {
-          background-image: url("../images/legs.jpeg");
-          background-repeat: no-repeat;
-          height:100vh;
-           }
-          .loader div:nth-child(1)
-          {
-           animation-delay: 0.5s;
-           background-image: url("../images/pic3.jpeg");
-           height:100vh;
+        animation: animate 5s ease-in-out infinite;
+    }
 
-            }
-             .loader div:nth-child(2)
-             {
-             animation-delay: 1s;
-             }
-             .loader div:nth-child(3)
-              {
-              animation-delay: 1.5s;
-              }
-              .loader div:nth-child(4) {
-                background-image: url("../images/amin.jpeg");
-                height:100vh;
+    .loader div:nth-child(even) {
+        background-image: url("../images/legs.jpeg");
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
 
-               animation-delay: 2s;
-                }
-                 @keyframes animate
-                  {
-                   0% 
-                   { 
-                   transform-origin: top; 
-                   transform: scaleY(0);
-                    }
-                     25% 
-                     { 
-                     transform-origin: top; 
-                     transform: scaleY(1); 
-                     } 
-                     75% 
-                     { 
-                     transform-origin: bottom; 
-                     transform: scaleY(1);
-                      } 
-                      100%
-                       {
-                       transform-origin: bottom; 
-                       transform: scaleY(0); 
-                       }
-                        }
-#about{
-    background-image: url("../images/african.jpeg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-image: fixed;
-}
-body #ovr{
-    height: inherit;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.8);
+    .loader div:nth-child(1) {
+        animation-delay: 0.5s;
+        background-image: url("../images/pic3.jpeg");
+        height: 100vh;
 
-}
-.content-section {
+    }
 
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
-    color:white;
-}
-.parag{
-color: white;
-text-align: center;
-font-family: 'Josefin Slab', serif;
-font-size: 20px;
+    .loader div:nth-child(2) {
+        animation-delay: 1s;
+    }
 
-}
+    .loader div:nth-child(3) {
+        animation-delay: 1.5s;
+    }
 
+    .loader div:nth-child(4) {
+        background-image: url("../images/amin.jpeg");
+        height: 100vh;
 
-#sisi{
-    font-family: 'Anton', sans-serif;
-    font-weight: 100;
-    font-size: 80px;
+        animation-delay: 2s;
+    }
+
+    @keyframes animate {
+        0% {
+            transform-origin: top;
+            transform: scaleY(0);
+        }
+
+        25% {
+            transform-origin: top;
+            transform: scaleY(1);
+        }
+
+        75% {
+            transform-origin: bottom;
+            transform: scaleY(1);
+        }
+
+        100% {
+            transform-origin: bottom;
+            transform: scaleY(0);
+        }
+    }
+
+    #about {
+        background-image: url("../images/african.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-image: fixed;
+    }
+
+    body #ovr {
+        height: inherit;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.8);
+
+    }
+
+    .content-section {
+
+        padding: 10px 20px;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .parag {
+        color: white;
+        text-align: center;
+        font-family: 'Josefin Slab', serif;
+        font-size: 20px;
+
+    }
 
 
-}
-p a{
-    text-decoration: none;
-}
-.design-image{
-    padding-top: 25px;
-    width:720px;
-    height:auto;
-}
-a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
-}
-
-.article-content {
-    white-space: pre-line;
-}
-
-.article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
-}
-
-.article-metadata,.article-content a:hover {
-    color: #333;
-    text-decoration: none;
-}
-.media{
-    background-color:rgba(0, 0, 0, 0.5);
-}
-.designs{
-    background-image:radial-gradient(circle,#000000,whitesmoke);
-}
+    #sisi {
+        font-family: 'Anton', sans-serif;
+        font-weight: 100;
+        font-size: 80px;
 
 
+    }
 
+    p a {
+        text-decoration: none;
+    }
 
+    .design-image {
+        padding-top: 25px;
+        width: 720px;
+        height: auto;
+    }
+
+    a.article-title:hover {
+        color: #428bca;
+        text-decoration: none;
+    }
+
+    .article-content {
+        white-space: pre-line;
+    }
+
+    .article-metadata {
+        padding-bottom: 1px;
+        margin-bottom: 4px;
+        border-bottom: 1px solid #e3e3e3
+    }
+
+    .article-metadata,
+    .article-content a:hover {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .media {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .designs {
+        background-image: radial-gradient(circle, #000000, whitesmoke);
+    }
+
+    #prof {
+        margin-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        float:right;
+        color: white;
+        background-color: rgba(161, 157, 157, 0.5);
+        height: auto;
+    }
