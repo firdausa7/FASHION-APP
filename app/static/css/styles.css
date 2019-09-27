@@ -198,16 +198,18 @@ body {
                        transform: scaleY(0); 
                        }
                         }
-#abt{
-    background-image: url("../images/fash4.jpeg");
+#about{
+    background-image: url("../images/african.jpeg");
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
+    background-image: fixed;
 }
 #ovr{
     height: 100vh;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7)
 
 }
 .content-section {
@@ -218,4 +220,17 @@ body {
     margin-bottom: 20px;
     color:white;
 }
+.parag{
+color: white;
+text-align: center;
+font-family: 'Poppins', sans-serif;
+font-size: 16px;
 
+}
+
+}
+#sisi{
+    font-family: 'Anton', sans-serif;
+
+
+}
