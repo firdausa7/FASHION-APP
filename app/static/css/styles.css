@@ -125,7 +125,14 @@ body {
     height: auto;
 
 }
-
+.auth-forms1{
+    margin-top: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:white;
+    background-color:transparent;
+    height: auto;
+}
 .auth-family{
     background-image: url("../images/gwen.jpg");
     background-size: cover;
@@ -133,7 +140,13 @@ body {
     height: 100vh;
     background-repeat: no-repeat;
 }
-
+#lala{
+    background-image: url("../images/fash.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
 
  .loader
   {
@@ -147,31 +160,37 @@ body {
        .loader div
        {
        width:25%;
-       height: 100%;
+       height: 100vh;
        background-image: url("../images/pic1.jpeg");
         background-repeat: no-repeat;
         transform: scaleY(0);
          animation: animate 5s ease-in-out infinite;
-          } 
-          .loader div:nth-child(even) 
-          { 
-          background-image: url("../images/pic2.jpeg");
-          background-repeat: no-repeat;
-          height: 100%;
-           }
-          .loader div:nth-child(1) 
+          }
+          .loader div:nth-child(even)
           {
-           animation-delay: 1s;
+          background-image: url("../images/legs.jpeg");
+          background-repeat: no-repeat;
+          height:100vh;
+           }
+          .loader div:nth-child(1)
+          {
+           animation-delay: 0.5s;
+           background-image: url("../images/pic3.jpeg");
+           height:100vh;
+
             }
-             .loader div:nth-child(2) 
-             { 
-             animation-delay: 1s; 
-             } 
+             .loader div:nth-child(2)
+             {
+             animation-delay: 1s;
+             }
              .loader div:nth-child(3)
               {
-              animation-delay: 1.5s; 
-              } 
+              animation-delay: 1.5s;
+              }
               .loader div:nth-child(4) {
+                background-image: url("../images/amin.jpeg");
+                height:100vh;
+
                animation-delay: 2s;
                 }
                  @keyframes animate
@@ -197,27 +216,44 @@ body {
                        transform: scaleY(0); 
                        }
                         }
-#abt{
-    background-image: url("../images/fash4.jpeg");
+#about{
+    background-image: url("../images/african.jpeg");
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
+    background-image: fixed;
 }
-#ovr{
-    height: 100vh;
+body #ovr{
+    height: inherit;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8);
 
 }
 .content-section {
-   
+
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
     color:white;
 }
+.parag{
+color: white;
+text-align: center;
+font-family: 'Josefin Slab', serif;
+font-size: 20px;
 
+}
+
+
+#sisi{
+    font-family: 'Anton', sans-serif;
+    font-weight: 100;
+    font-size: 80px;
+
+
+}
 p a{
     text-decoration: none;
 }
@@ -249,7 +285,7 @@ a.article-title:hover {
     background-color:rgba(0, 0, 0, 0.5);
 }
 .designs{
-    background-image:radial-gradient(circle,#000000,#0000ff);
+    background-image:radial-gradient(circle,#000000,whitesmoke);
 }
 
 

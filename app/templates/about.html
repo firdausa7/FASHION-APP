@@ -2,22 +2,64 @@
 {% block styles%}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton|Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton|Josefin+Slab|Poppins&display=swap" rel="stylesheet">
+
 {% endblock styles %}
 <!-- Content block -->
 {% block content%}
-<div class="container"id="abt">
-    <div class="overlay"id="ovr">
-<h1 class="text-center">ABOUT US</h1>
+<div class = "container-full overlay" id="about">
+    <div class="overlay" id="ovr">
+        <h1 class="text-center" style="color:white;"id="sisi" >ABOUT US</h1>
+        <hr  style="border-width:2px; size:20px; border-color:lightseagreen; width: 70%; text-align:center">
+        
+        <div class="parag"><p>
+    <strong>Fashion App</strong> is an web application that helps many of these gifted designers to achieve their dreams in fashion by helping them get<br>
+               their brilliant fashion ideas out to the world. Fashion App provides a platform where designers can create profiles and share some<br>
+                    of their brilliant ideas. Fashion app also provides a platform for other users who may want to get new fashion<br>
+                           design.<br>
+            There is great potential and genuine interest in fashion in East Africa today, evidenced by the frequent occurrence of creative fashion events. <br>
+            Creativity alone without excellence will however perpetually keep us in a stagnant market. It is upon this foundation that Fashion App is created.</p>
+            <br>
+            <br>
+
+        </div>
+        <div class="container" id="sema">
+            <div class="row">
+                <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                        <img src="../static/images/melody.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                            <img src="../static/images/afric.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            </div>
+                          </div>
+                          </div>
+                          <div class="col-md-4">
+                                <div class="card" style="width: 18rem;">
+                                      <img src="../static/images/picha.jpeg" class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                      </div>
+                                    </div>
+                                    </div>
+        </div>
+        </div>
 </div>
-    </div>
+        </div>
 
 
 
 
 
 
-</div>
-{% block scripts %} 
+
+{% block scripts %}
 <script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
 
 {% endblock %}
