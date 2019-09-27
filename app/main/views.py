@@ -3,7 +3,7 @@ import secrets, requests,os
 from flask import render_template,url_for,flash,redirect,request
 from . import main
 from  .forms import CommentForm, PostForm
-from ..models import Post, User
+from ..models import Post, User,Comment
 from app import create_app
 from .. import db
 from flask_login import login_required,current_user
@@ -29,6 +29,7 @@ def designs():
     """ View root page function that returns index page """
     page = request.args.get('page', 1, type=int)
     posts=Post.query.order_by(Post.date_posted.desc()).paginate(page=page,per_page=2) 
+    
     return render_template('designers.html', posts=posts)
 
 
@@ -63,6 +64,25 @@ def new_design_post():
    
        
     return render_template('create_design_post.html',title = Post.design_name, post_form = form)
+
+@main.route('/designers/<int:id>', methods=['GET', 'POST'])
+def design_post(id):
+    post = Post.get_post(id)
+ 
+
+    comment_form = CommentForm()
+    if comment_form.validate_on_submit():
+        comment = comment_form.text.data
+
+        new_comment = Comment(
+            comment=comment, user=current_user, post_id=post)
+
+        new_comment.save_comment()
+
+    comments = Comment.get_comments(post)
+
+    return render_template("design_post.html", post=post, comment_form=comment_form, comments=comments, date=date_posted)
+
 
 
 
