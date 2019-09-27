@@ -1,6 +1,3 @@
-
-
-
 {% extends 'base.html' %}
 
 {% block content %}
@@ -11,18 +8,25 @@
 
 
 {% for post in posts.items %}
-<article class="media content-section">
-    <img class="" src="{{url_for('static',filename='images/'+ post.design_image)}}">
-    <div class="media-body">
-        <div class="article-metadata">
-            <a class="mr-2" href="{{url_for('main.designs',username=post.designer.username)}}">{{post.designer.username}}</a>
-            <small class="text-muted">{{post.date_posted.strftime('%Y-%m-%d')}}</small>
+
+<div class='container-fluid designs'>
+    <article class="media content-section">
+        <img class="design-image" src="{{url_for('static',filename='images/'+ post.design_image)}}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2"
+                    href="{{url_for('main.designs',username=post.designer.username)}}">Designed by: {{post.designer.username}}</a>
+                <small class="text-muted">{{post.date_posted.strftime('%Y-%m-%d')}}</small>
+            </div>
+            <h2><a class="article-title text-primary" href="">{{post.design_name}}</a></h2>
+            <div class=article-content>
+                <p class="desc"><a class="article-content" href="">{{post.description}}</a></p>
+            </div>
+
         </div>
-        <h2><a class="article-title text-primary" href="">{{post.design_name}}</a>
-        </h2>
-        <p class="article-content">{{post.description}}</p>
-    </div>
-</article>
+    </article>
+</div>
+
 {% endfor %}
 {% for page_num in posts.iter_pages(left_edge=1, right_edge=1,left_current=1) %}
 {% if page_num %}

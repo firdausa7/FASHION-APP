@@ -4,7 +4,7 @@
 {% block content %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 <div class="container-fluid auth-family">
-    <div class="container-fluid auth-forms">
+    <div class="">
         <div class="row">
             <div class="col-md-2"> </div>
             <div class="col-md-8">
@@ -16,8 +16,12 @@
                 </div>
                 {% endfor %}
                 <!-- Login form -->
-                {{wtf.quick_form(form)}}
-                <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+                <div class="auth-forms">
+                        {{wtf.quick_form(form)}}
+                        <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+                </div>
+               
+              
             </div>
             <div clas="col-md-2"> </div>
         </div>

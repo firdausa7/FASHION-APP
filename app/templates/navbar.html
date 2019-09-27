@@ -9,10 +9,11 @@
         <br>
         <a class="nav-item nav-link active">{{current_user.username| capitalize}}</a>
         <a href="{{ url_for('auth.logout') }} " onclick="buzz()">LOGOUT</a>
+        <a href="{{ url_for('main.new_design_post') }}" onclick="buzz()">CREATE DESIGNS</a>
         {% else %}
         <a href="register" onclick="buzz()">REGISTER</a>
         <a href=" {{ url_for('auth.login') }} " onclick="buzz()">LOGIN</a>
-        <a href="{{ url_for('main.new_design_post') }}" onclick="buzz()">CREATE DESIGNS</a>
+       
         {%endif%}
         <a href="/" onclick="buzz()">HOME</a>
         <a href="designers" onclick="buzz()">DESIGNERS</a>
