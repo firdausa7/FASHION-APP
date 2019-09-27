@@ -246,7 +246,10 @@ font-size: 20px;
 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 49ca1f82ea43aa90ca4934ba8bae89bc86603713
 #sisi{
     font-family: 'Anton', sans-serif;
     font-weight: 100;
@@ -287,7 +290,25 @@ a.article-title:hover {
 .designs{
     background-image:radial-gradient(circle,#000000,whitesmoke);
 }
-
-
-
-
+.postdata{
+  width : 10%;
+  height: 10%;
+}
+#info{
+  font-size: 1;
+  font-weight: normal;
+}
+#hom{
+  background-image: url("../images/img3.jpg")
+  
+}
+.toper{
+  font-family: 'Mansalva', cursive;
+  text-align: center;
+  color:blue;
+}
+.manu{
+  font-family: 'Mansalva', cursive;
+  text-align: center;
+  color:white;
+}
