@@ -7,7 +7,7 @@
 
 <div class=" container content-section">
     <div class="media">
-        <img class=" " id=prof-pic src="{{image_file}}">
+        <img class="rounded-circle account-img" style="height: 90px; width: 90px" id=prof-pic src="{{image_file}}">
         <div class="media-body">
             <h2 class="account-heading">{{current_user.username|capitalize}}</h2>
             <p class="text-secondary">{{current_user.email}}</p>
@@ -19,7 +19,7 @@
                 <div class="col-md-2"> </div>
                 <div class="col-md-8">
                     <legend class="form-group">Account info</legend>
-                    {{wtf.quick_form(update_form)}}
+                    {{wtf.quick_form(form)}}
                     
                 </div>
                 <div class="col-md-2"></div>

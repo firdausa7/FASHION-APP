@@ -9,7 +9,9 @@ from .. import db,bcrypt
 from flask_login import login_user,logout_user,login_required,current_user
 from . import auth
 from .. import mail
+from app import create_app
 
+app = create_app('development')
 
 
 @auth.route('/register',methods = ["GET","POST"])
@@ -51,15 +53,30 @@ def logout():
 
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(form_picture.filename)
-    picture_fn = random_hex + f_ext
-    picture_path = os.path.join( 'app/static/profile_pics', picture_fn)
-
-    output_size = (125, 125)
-
-    i = Image.open(form_picture)
-    i.thumbnail(output_size)
-    i.save(picture_path)
-    
+    _,f_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex +f_ext
+    picture_path = os.path.join(app.root_path, 'static/images',picture_fn)
+    form_picture.save(picture_path)
 
     return picture_fn
+
+@auth.route('/account', methods=['GET', 'POST'])
+@login_required
+def profile():
+    form = UpdateAccountForm()
+    if form.validate_on_submit():
+        if form.image_file.data:
+            image_file = save_picture(form.image_file.data)
+            current_user.image_file = image_file
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Your account details have been updated!', 'success')
+        return redirect(url_for('auth.profile'))
+    elif request.method == 'GET':
+        form.username.data = current_user.username   
+        form.email.data = current_user.email 
+        form. contact.data = current_user. contact
+        form.bio.data = current_user.bio              
+    image_file = url_for('static', filename = 'images/' + current_user.image_file)
+    return render_template('profile.html', title='Account', image_file = image_file, form=form)  

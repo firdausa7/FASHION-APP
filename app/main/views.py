@@ -25,10 +25,9 @@ def about_us():
 
     return render_template('about.html')
 
-
 @main.route('/designers')
 def designs():
-    """ View root page function that returns index page """
+    """ View root page function that returns designers page """
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(
         Post.date_posted.desc()).paginate(page=page, per_page=2)
@@ -45,7 +44,7 @@ def save_design_image(form_picture):
     return picture_fn
 
 
-@main.route('/post', methods=['POST', 'GET'])
+@main.route('/post', methods = ['POST', 'GET'])
 @login_required
 def new_design_post():
     form = PostForm()
@@ -60,6 +59,21 @@ def new_design_post():
         db.session.commit()
 
         flash('Posted successfully!', 'success')
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.designs'))
+   
+       
+    return render_template('create_design_post.html',title = Post.design_name, post_form = form)
+
+@main.route('/post/<int:post_id>/delete', methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.designer != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your Post has been deleted!', 'success')
+    return redirect(url_for('.index'))
+
 
     return render_template('create_design_post.html', title=Post.design_name, post_form=form)
