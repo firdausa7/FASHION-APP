@@ -231,7 +231,6 @@ font-size: 16px;
 
 }
 
-}
 #sisi{
     font-family: 'Anton', sans-serif;
 
@@ -270,7 +269,25 @@ a.article-title:hover {
 .designs{
     background-image:radial-gradient(circle,#000000,#0000ff);
 }
-
-
-
-
+.postdata{
+  width : 10%;
+  height: 10%;
+}
+#info{
+  font-size: 1;
+  font-weight: normal;
+}
+#hom{
+  background-image: url("../images/img3.jpg")
+  
+}
+.toper{
+  font-family: 'Mansalva', cursive;
+  text-align: center;
+  color:blue;
+}
+.manu{
+  font-family: 'Mansalva', cursive;
+  text-align: center;
+  color:white;
+}
