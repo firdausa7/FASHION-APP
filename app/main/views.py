@@ -14,19 +14,11 @@ from flask_login import login_required, current_user
 app = create_app('development')
 
 
-@main.route('/', methods=['GET', 'POST'])
-def index():
-    return render_template('index.html')
-
-<<<<<<< HEAD
 @main.route('/')
 def index():
   return render_template("index.html")
 
     
-=======
-
->>>>>>> 47b4fd7285bd4e4fe2d487528ed02308f2e83a31
 @main.route('/about')
 def about_us():
     """ View root page function that returns index page """
