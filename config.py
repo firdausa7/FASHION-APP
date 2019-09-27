@@ -5,7 +5,7 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY ='12345678'
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://firdausa:12345@localhost/fashion'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://emmanuel:lilfranken@localhost/fashion'
 
 
 
