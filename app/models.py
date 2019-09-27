@@ -47,10 +47,29 @@ class Post(UserMixin, db.Model):
     comment = db.relationship('Comment', backref='post', lazy='dynamic')
 
 
+
+    @classmethod
+    def get_post(cls,id):
+        post = Post.query.filter_by(id=id).first()
+
+        return post
+
+
+
 class Comment(UserMixin, db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String,nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False,
                             default=datetime.utcnow)
     comment = db.Column(db.Text, nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
+
+    def save_comment(self):
+       db.session.add(self)
+       db.session.commit()
+
+    @classmethod
+    def get_comments(cls,post):
+       comments = Comment.query.filter_by(post_id=post).all()
+       return comments
